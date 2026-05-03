@@ -16,6 +16,7 @@ app.post("/users", async (req, res) => {
 
     res.status(201).json(result.rows[0]);
   } catch (err) {
+    console.error("User creation failed:", err);
     res.status(500).json({ error: err.message });
   }
 });
